@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   kafka:
     image: confluentinc/cp-kafka:7.9.10
@@ -19,6 +21,28 @@ services:
       KAFKA_LOG_DIRS: '/var/lib/kafka/data'
     volumes:
       - kafka_data:/var/lib/kafka/data
+
+  airflow:
+    image: apache/airflow:2.8.1
+    container_name: airflow
+    user: "0:0"
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__CORE__LOAD_EXAMPLES=false
+      - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=true
+      - AIRFLOW__API__AUTH_BACKENDS=airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session
+      - AIRFLOW__WEBSERVER__RBAC=true
+      - _AIRFLOW_WWW_USER_CREATE=true
+      - _AIRFLOW_WWW_USER_USERNAME=admin
+      - _AIRFLOW_WWW_USER_PASSWORD=admin
+    ports:
+      - "8080:8080"
+    command: standalone
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - D:/fake_commerce_api/data:/opt/airflow/data
+    restart: always
 
 volumes:
   kafka_data:
