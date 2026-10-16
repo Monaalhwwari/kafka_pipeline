@@ -3,6 +3,7 @@ import pandas as pd
 import time
 import json
 import pyarrow as pa
+
 consumer_config = {
     "bootstrap.servers": "localhost:9092",
     "group.id": "test-group",
