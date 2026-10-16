@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2537a2c8-60ac-4f9f-958d-e8bf059d68e9" name="Changes" comment="Add kafka pipeline">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dags/airflowdags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dags/transforming.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_batch_1791400623.parquet" beforeDir="false" afterPath="$PROJECT_DIR$/data/data_batch_1791400623.parquet" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_batch_1791400743.parquet" beforeDir="false" afterPath="$PROJECT_DIR$/data/data_batch_1791400743.parquet" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_batch_1791400863.parquet" beforeDir="false" afterPath="$PROJECT_DIR$/data/data_batch_1791400863.parquet" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_batch_1791400983.parquet" beforeDir="false" afterPath="$PROJECT_DIR$/data/data_batch_1791400983.parquet" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_batch_1791401104.parquet" beforeDir="false" afterPath="$PROJECT_DIR$/data/data_batch_1791401104.parquet" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_batch_1791401224.parquet" beforeDir="false" afterPath="$PROJECT_DIR$/data/data_batch_1791401224.parquet" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/dag_processor_manager/dag_processor_manager.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/dag_processor_manager/dag_processor_manager.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/scheduler/2026-10-16/airflowdags.py.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/scheduler/2026-10-16/airflowdags.py.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
