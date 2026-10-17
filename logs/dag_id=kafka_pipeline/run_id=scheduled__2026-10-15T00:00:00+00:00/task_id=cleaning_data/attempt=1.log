@@ -1,0 +1,68 @@
+[2026-10-17T16:01:51.040+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kafka_pipeline.cleaning_data scheduled__2026-10-15T00:00:00+00:00 [queued]>
+[2026-10-17T16:01:51.047+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kafka_pipeline.cleaning_data scheduled__2026-10-15T00:00:00+00:00 [queued]>
+[2026-10-17T16:01:51.047+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-10-17T16:01:51.059+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): cleaning_data> on 2026-10-15 00:00:00+00:00
+[2026-10-17T16:01:51.063+0000] {standard_task_runner.py:60} INFO - Started process 553 to run task
+[2026-10-17T16:01:51.066+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'kafka_pipeline', 'cleaning_data', 'scheduled__2026-10-15T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/airflowdags.py', '--cfg-path', '/tmp/tmp1128a7os']
+[2026-10-17T16:01:51.067+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask cleaning_data
+[2026-10-17T16:01:51.095+0000] {task_command.py:423} INFO - Running <TaskInstance: kafka_pipeline.cleaning_data scheduled__2026-10-15T00:00:00+00:00 [running]> on host a90209279ee9
+[2026-10-17T16:01:51.136+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='kafka_pipeline' AIRFLOW_CTX_TASK_ID='cleaning_data' AIRFLOW_CTX_EXECUTION_DATE='2026-10-15T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-10-15T00:00:00+00:00'
+[2026-10-17T16:01:51.137+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/transforming.py", line 31, in cleaning_data
+    rename_cols = [col(c).alias(c.strip().lower().replace(" ", "_")) for c in df.columns]
+UnboundLocalError: local variable 'df' referenced before assignment
+[2026-10-17T16:01:51.140+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=kafka_pipeline, task_id=cleaning_data, execution_date=20261015T000000, start_date=20261017T160151, end_date=20261017T160151
+[2026-10-17T16:01:51.149+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 4 for task cleaning_data (local variable 'df' referenced before assignment; 553)
+[2026-10-17T16:01:51.157+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-10-17T16:01:51.166+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-10-17T16:43:21.878+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kafka_pipeline.cleaning_data scheduled__2026-10-15T00:00:00+00:00 [queued]>
+[2026-10-17T16:43:21.883+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kafka_pipeline.cleaning_data scheduled__2026-10-15T00:00:00+00:00 [queued]>
+[2026-10-17T16:43:21.883+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-10-17T16:43:21.895+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): cleaning_data> on 2026-10-15 00:00:00+00:00
+[2026-10-17T16:43:21.899+0000] {standard_task_runner.py:60} INFO - Started process 4020 to run task
+[2026-10-17T16:43:21.902+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'kafka_pipeline', 'cleaning_data', 'scheduled__2026-10-15T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/airflowdags.py', '--cfg-path', '/tmp/tmpzne0ib0v']
+[2026-10-17T16:43:21.903+0000] {standard_task_runner.py:88} INFO - Job 8: Subtask cleaning_data
+[2026-10-17T16:43:21.931+0000] {task_command.py:423} INFO - Running <TaskInstance: kafka_pipeline.cleaning_data scheduled__2026-10-15T00:00:00+00:00 [running]> on host 44981df301f5
+[2026-10-17T16:43:21.971+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='kafka_pipeline' AIRFLOW_CTX_TASK_ID='cleaning_data' AIRFLOW_CTX_EXECUTION_DATE='2026-10-15T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-10-15T00:00:00+00:00'
+[2026-10-17T16:43:30.508+0000] {logging_mixin.py:188} INFO - +-------+-------------+------------+-----------+----------+
+| symbol|price_rounded|high_rounded|low_rounded|price_rank|
++-------+-------------+------------+-----------+----------+
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
++-------+-------------+------------+-----------+----------+
+only showing top 10 rows
+[2026-10-17T16:43:31.254+0000] {logging_mixin.py:188} INFO - +--------+---------+-------------+------------+-----------+---------------+
+|  symbol|avg_price|price_rounded|high_rounded|low_rounded|price_deviation|
++--------+---------+-------------+------------+-----------+---------------+
+| DOTUSDT|     1.11|         1.11|        1.22|       1.09|            0.0|
+| BTCUSDT| 83461.41|     83405.54|    85682.95|   82787.25|         -55.87|
+| ETHUSDT|  2565.22|      2562.44|     2700.54|    2538.06|          -2.78|
+| BNBUSDT|   772.48|       771.85|      780.73|     758.57|          -0.63|
+| ADAUSDT|     0.26|         0.26|        0.27|       0.25|            0.0|
+|LINKUSDT|    13.38|        13.35|       14.04|      13.26|          -0.03|
+|DOGEUSDT|     0.09|         0.09|        0.09|       0.09|            0.0|
+| SOLUSDT|   116.24|       116.08|      121.48|     115.52|          -0.16|
+| BTCUSDT| 83461.41|     83405.54|    85682.95|   82787.25|         -55.87|
+| ETHUSDT|  2565.22|      2562.44|     2700.54|    2538.06|          -2.78|
++--------+---------+-------------+------------+-----------+---------------+
+only showing top 10 rows
+[2026-10-17T16:43:32.019+0000] {logging_mixin.py:188} INFO - Saved cleaned data to /opt/airflow/data/cleaned_parquet
+[2026-10-17T16:43:32.345+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-10-17T16:43:32.352+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=kafka_pipeline, task_id=cleaning_data, execution_date=20261015T000000, start_date=20261017T164321, end_date=20261017T164332
+[2026-10-17T16:43:32.397+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-10-17T16:43:32.404+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

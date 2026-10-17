@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
-from transformer import (getting_parquet,cleaning_data)
+from transforming import (getting_parquet,cleaning_data)
 
 
 defualt_args = {
@@ -16,7 +16,7 @@ defualt_args = {
 
 with DAG(
     dag_id='kafka_pipeline',
-    default_args=default_args,
+    default_args=defualt_args,
     start_date=datetime(2026, 10, 15),
     schedule="@once",
     catchup=False,

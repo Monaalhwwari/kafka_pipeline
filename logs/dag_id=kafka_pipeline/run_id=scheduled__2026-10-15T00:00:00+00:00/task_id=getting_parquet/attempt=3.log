@@ -1,0 +1,15 @@
+[2026-10-17T16:43:03.945+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kafka_pipeline.getting_parquet scheduled__2026-10-15T00:00:00+00:00 [queued]>
+[2026-10-17T16:43:03.950+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kafka_pipeline.getting_parquet scheduled__2026-10-15T00:00:00+00:00 [queued]>
+[2026-10-17T16:43:03.951+0000] {taskinstance.py:2170} INFO - Starting attempt 3 of 4
+[2026-10-17T16:43:03.964+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): getting_parquet> on 2026-10-15 00:00:00+00:00
+[2026-10-17T16:43:03.968+0000] {standard_task_runner.py:60} INFO - Started process 3557 to run task
+[2026-10-17T16:43:03.971+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'kafka_pipeline', 'getting_parquet', 'scheduled__2026-10-15T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/airflowdags.py', '--cfg-path', '/tmp/tmpcvr24jdz']
+[2026-10-17T16:43:03.973+0000] {standard_task_runner.py:88} INFO - Job 6: Subtask getting_parquet
+[2026-10-17T16:43:04.003+0000] {task_command.py:423} INFO - Running <TaskInstance: kafka_pipeline.getting_parquet scheduled__2026-10-15T00:00:00+00:00 [running]> on host 44981df301f5
+[2026-10-17T16:43:04.044+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='kafka_pipeline' AIRFLOW_CTX_TASK_ID='getting_parquet' AIRFLOW_CTX_EXECUTION_DATE='2026-10-15T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-10-15T00:00:00+00:00'
+[2026-10-17T16:43:10.134+0000] {logging_mixin.py:188} INFO - Read 6 Parquet files
+[2026-10-17T16:43:10.137+0000] {logging_mixin.py:188} INFO - Saved combined data to /opt/airflow/data/combined_parquet
+[2026-10-17T16:43:10.409+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-10-17T16:43:10.414+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=kafka_pipeline, task_id=getting_parquet, execution_date=20261015T000000, start_date=20261017T164303, end_date=20261017T164310
+[2026-10-17T16:43:10.437+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-10-17T16:43:10.449+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

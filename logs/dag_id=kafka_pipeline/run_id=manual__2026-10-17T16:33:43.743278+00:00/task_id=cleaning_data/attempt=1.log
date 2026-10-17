@@ -1,0 +1,44 @@
+[2026-10-17T16:43:34.987+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kafka_pipeline.cleaning_data manual__2026-10-17T16:33:43.743278+00:00 [queued]>
+[2026-10-17T16:43:34.994+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kafka_pipeline.cleaning_data manual__2026-10-17T16:33:43.743278+00:00 [queued]>
+[2026-10-17T16:43:34.994+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-10-17T16:43:35.007+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): cleaning_data> on 2026-10-17 16:33:43.743278+00:00
+[2026-10-17T16:43:35.011+0000] {standard_task_runner.py:60} INFO - Started process 4361 to run task
+[2026-10-17T16:43:35.014+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'kafka_pipeline', 'cleaning_data', 'manual__2026-10-17T16:33:43.743278+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/airflowdags.py', '--cfg-path', '/tmp/tmptlvji0ar']
+[2026-10-17T16:43:35.016+0000] {standard_task_runner.py:88} INFO - Job 9: Subtask cleaning_data
+[2026-10-17T16:43:35.047+0000] {task_command.py:423} INFO - Running <TaskInstance: kafka_pipeline.cleaning_data manual__2026-10-17T16:33:43.743278+00:00 [running]> on host 44981df301f5
+[2026-10-17T16:43:35.099+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='kafka_pipeline' AIRFLOW_CTX_TASK_ID='cleaning_data' AIRFLOW_CTX_EXECUTION_DATE='2026-10-17T16:33:43.743278+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-17T16:33:43.743278+00:00'
+[2026-10-17T16:43:43.738+0000] {logging_mixin.py:188} INFO - +-------+-------------+------------+-----------+----------+
+| symbol|price_rounded|high_rounded|low_rounded|price_rank|
++-------+-------------+------------+-----------+----------+
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
+|ADAUSDT|         0.26|        0.27|       0.25|         1|
++-------+-------------+------------+-----------+----------+
+only showing top 10 rows
+[2026-10-17T16:43:44.428+0000] {logging_mixin.py:188} INFO - +--------+---------+-------------+------------+-----------+---------------+
+|  symbol|avg_price|price_rounded|high_rounded|low_rounded|price_deviation|
++--------+---------+-------------+------------+-----------+---------------+
+| DOTUSDT|     1.11|         1.11|        1.22|       1.09|            0.0|
+| BTCUSDT| 83461.41|     83405.54|    85682.95|   82787.25|         -55.87|
+| ETHUSDT|  2565.22|      2562.44|     2700.54|    2538.06|          -2.78|
+| BNBUSDT|   772.48|       771.85|      780.73|     758.57|          -0.63|
+| ADAUSDT|     0.26|         0.26|        0.27|       0.25|            0.0|
+|LINKUSDT|    13.38|        13.35|       14.04|      13.26|          -0.03|
+|DOGEUSDT|     0.09|         0.09|        0.09|       0.09|            0.0|
+| SOLUSDT|   116.24|       116.08|      121.48|     115.52|          -0.16|
+| BTCUSDT| 83461.41|     83405.54|    85682.95|   82787.25|         -55.87|
+| ETHUSDT|  2565.22|      2562.44|     2700.54|    2538.06|          -2.78|
++--------+---------+-------------+------------+-----------+---------------+
+only showing top 10 rows
+[2026-10-17T16:43:45.196+0000] {logging_mixin.py:188} INFO - Saved cleaned data to /opt/airflow/data/cleaned_parquet
+[2026-10-17T16:43:45.613+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-10-17T16:43:45.618+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=kafka_pipeline, task_id=cleaning_data, execution_date=20261017T163343, start_date=20261017T164334, end_date=20261017T164345
+[2026-10-17T16:43:45.635+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-10-17T16:43:45.647+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

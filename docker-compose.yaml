@@ -1,9 +1,7 @@
-version: '3.8'
-
 services:
   kafka:
     image: confluentinc/cp-kafka:7.9.10
-    container_name: kafka
+    container_name: kofta
     ports:
       - "9092:9092"
     environment:
@@ -24,24 +22,25 @@ services:
 
   airflow:
     image: apache/airflow:2.8.1
-    container_name: airflow
-    user: "0:0"
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    container_name: air_flow
     environment:
       - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
       - AIRFLOW__CORE__LOAD_EXAMPLES=false
       - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=true
       - AIRFLOW__API__AUTH_BACKENDS=airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session
-      - AIRFLOW__WEBSERVER__RBAC=true
-      - _AIRFLOW_WWW_USER_CREATE=true
-      - _AIRFLOW_WWW_USER_USERNAME=admin
-      - _AIRFLOW_WWW_USER_PASSWORD=admin
     ports:
       - "8080:8080"
-    command: standalone
+    command: >
+      bash -c "airflow db migrate &&
+      airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password admin || true;
+      airflow webserver & airflow scheduler"
     volumes:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
-      - D:/fake_commerce_api/data:/opt/airflow/data
+      - /home/mona/PycharmProjects/kafka_pipeline/data:/opt/airflow/data
     restart: always
 
 volumes:
